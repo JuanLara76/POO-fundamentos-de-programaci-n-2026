@@ -3,33 +3,38 @@ public class Automovil {
     String fabricante;
     String modelo;
     String color;
-    int cilindrada;
-    int capacidadTanque;
+    int cilindraje;
+    int capacidadEstanque;
 
-    public Automovil(String fabricante, String modelo,
-            String color, int cilindrada, int capacidadTanque) {
-
+    public Automovil(String fabricante, String modelo, String color,
+                     int cilindraje, int capacidadEstanque) {
         this.fabricante = fabricante;
         this.modelo = modelo;
         this.color = color;
-        this.cilindrada = cilindrada;
-        this.capacidadTanque = capacidadTanque;
+        this.cilindraje = cilindraje;
+        this.capacidadEstanque = capacidadEstanque;
     }
 
-    public String frenar() {
-        return "El " + modelo + " va frenando.";
+    public String verDetalle() {
+        return "Fabricante: " + fabricante  + "\nModelo: " + modelo  + "\nColor: " + color  + "\nCilindraje: " + cilindraje + "\nCapacidad del tanque: " + capacidadEstanque + " litros";
+      
     }
 
     public String acelerar(int rpm) {
-        return "El " + modelo + " va acelerando a "
-                + rpm + " revoluciones por minuto.";
+        return "El modelo va acelerando a"  + rpm + " revoluciones por minuto.";
+                
+    }
+
+    public String frenar() {
+        return "El modelo va a frenando";
     }
 
     public String acelerarFrenar(int rpm) {
-        return acelerar(rpm) + "\n" + frenar();
+        return acelerar(rpm) + frenar();
     }
 
-    public float calcularConsumo(int km, int litrosConsumidos) {
-        return (float) litrosConsumidos * 100 / km;
+    public String calcularConsumo(int km, int litrosConsumidos) {
+        return "Consumo de gasolina: " + litrosConsumidos + " litros por cada " + km + " km";
+               
     }
 }
