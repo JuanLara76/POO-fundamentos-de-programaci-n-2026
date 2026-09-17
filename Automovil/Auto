@@ -1,0 +1,35 @@
+public class Automovil {
+
+    String fabricante;
+    String modelo;
+    String color;
+    int cilindrada;
+    int capacidadTanque;
+
+    public Automovil(String fabricante, String modelo,
+            String color, int cilindrada, int capacidadTanque) {
+
+        this.fabricante = fabricante;
+        this.modelo = modelo;
+        this.color = color;
+        this.cilindrada = cilindrada;
+        this.capacidadTanque = capacidadTanque;
+    }
+
+    public String frenar() {
+        return "El " + modelo + " va frenando.";
+    }
+
+    public String acelerar(int rpm) {
+        return "El " + modelo + " va acelerando a "
+                + rpm + " revoluciones por minuto.";
+    }
+
+    public String acelerarFrenar(int rpm) {
+        return acelerar(rpm) + "\n" + frenar();
+    }
+
+    public float calcularConsumo(int km, int litrosConsumidos) {
+        return (float) litrosConsumidos * 100 / km;
+    }
+}
