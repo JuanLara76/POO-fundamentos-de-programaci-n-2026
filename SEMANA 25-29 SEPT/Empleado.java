@@ -1,6 +1,4 @@
-
 package retroalimentacion.parcial1;
-
 
 public class Empleado {
   private String nombre;
@@ -60,19 +58,20 @@ public class Empleado {
     }
     
    public String verDetalle(){
-      return "El nombre del empelado es:" + this.nombre +
-              "/nEl cargo del empleado es:" + this.cargo + 
-              "/nEl salario del empleado es:" + this.salarioBase + 
-              "/nLos años de experiencia son:" + this.añosdeexperiencia;
+      return "\nEl nombre del empleado es:" + this.nombre +
+              "\nnEl cargo del empleado es:" + this.cargo + 
+              "\nEl salario del empleado es:" + this.salarioBase + 
+              "\nLos años de experiencia son:" + this.añosdeexperiencia;
     }
    public String Trabajar(int horas){
-       return "El empleado llamado" + this.nombre + "/nTrabaja:" + horas;
+       return "\nEl empleado llamado" + this.nombre + "\nTrabaja:" + horas;
        
        
    }
    
    public String tomarDescanso (int Descanso){
-       return "El trabajdor llamado:" + this.nombre + "/nToma estas horas de descanso:" + Descanso;
+       return "\nEl trabajador llamado:" + this.nombre + 
+               "\nToma estas horas de descanso:" + Descanso;
        
    }
    
@@ -81,10 +80,17 @@ public class Empleado {
        String descan = this.tomarDescanso(horas);
        return traba + descan;
        
-       
-}
+       }
    
+   public double calcularBono(float porcentaje) {
+   return (salarioBase/30) * porcentaje;
    
-       
    }
+   public double salarioTotal(double bono, int diasTrabajados) { 
+       double salarioPorDia = this.salarioBase / 30;
+       double salarioTrabajado = salarioPorDia * diasTrabajados;
+       return salarioTrabajado + this.calcularBono(diasTrabajados);
        
+       } 
+   
+} 
