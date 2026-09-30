@@ -1,0 +1,75 @@
+package producto;
+
+
+public class Portatil {
+    public class Producto {
+   private String nombre;
+   private String Categoria;
+   private double precio;
+   private int cantidadStock;
+
+        public Producto() {
+        }
+
+        public Producto(String nombre, String Categoria, double precio, int cantidadStock) {
+            this.nombre = nombre;
+            this.Categoria = Categoria;
+            this.precio = precio;
+            this.cantidadStock = cantidadStock;
+        }
+
+        public String getNombre() {
+            return nombre;
+        }
+
+        public void setNombre(String nombre) {
+            this.nombre = nombre;
+        }
+
+        public String getCategoria() {
+            return Categoria;
+        }
+
+        public void setCategoria(String Categoria) {
+            this.Categoria = Categoria;
+        }
+
+        public double getPrecio() {
+            return precio;
+        }
+
+        public void setPrecio(double precio) {
+            this.precio = precio;
+        }
+
+        public int getCantidadStock() {
+            return cantidadStock;
+        }
+
+        public void setCantidadStock(int cantidadStock) {
+            this.cantidadStock = cantidadStock;
+        }
+        
+   public String verDetalle(){
+       return "\n El nombre del producto es:" + this.nombre +
+               "\n Lacategoria es" + this.Categoria +
+               "\n El precio del producto es" + this.precio +
+               "\n La cantidad del Stock es:" + this.cantidadStock;
+       
+      }
+   public double calcularDescuento(int porcentaje){
+       return precio * porcentaje/ 100;
+       
+   }
+   
+   public double calcularDescuento(double porcentaje){
+       return precio * porcentaje/ 100;
+       
+   }
+   
+   public double calcularPrecioFinal(double porcentaje){
+       return precio - calcularPrecioFinal(porcentaje);
+   }
+       
+   }
+   }
