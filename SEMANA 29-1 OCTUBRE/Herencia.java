@@ -1,7 +1,7 @@
 package animal;
 
 
-public class Herencia30sept {
+public class Herencia30sept { 
     
     
     public static void main(String[] args) {
@@ -17,6 +17,9 @@ public class Herencia30sept {
         perro1.comer();
         perro1.dormir();
         System.out.println(perro1.getEspecie());
+        
+        Perro perro2 = new Perro ("mamifero", "pincher");
+        System.out.println();
     }
     
 }
