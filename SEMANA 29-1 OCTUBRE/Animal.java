@@ -2,12 +2,14 @@ package animal;
 
 
 public class Animal {
-
-   private String especie;
+    private String especie;
 
     
 
     public Animal() {
+    }
+    public Animal (String especie) {
+        this.especie = especie;
     }
 
     public String getEspecie() {
